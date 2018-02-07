@@ -1,0 +1,58 @@
+body {
+  background: black;
+}
+
+nav {
+  padding: 14px 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  .amp {
+    font-family: "adobe-caslon-pro",serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  transition: opacity .2s linear;
+  font-size: 25px;
+  font-family: "henriette",sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  top: 5px;
+  position: relative;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.cta {
+  border: solid 2px white;
+  padding: 2px 6px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  background: transparent;
+  letter-spacing: 0.002em;
+  transition: all .2s linear;
+  &:hover {
+    background: white;
+    color: black;
+  }
+}
+
+#main {
+  height: 75%;
+  padding: 0 10px;
+  background-image: url('../images/bg.jpg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  h1 {
+    position: relative;
+    top: 50%;
+    margin: 0;
+  }
+}

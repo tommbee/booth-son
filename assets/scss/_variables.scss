@@ -1,0 +1,80 @@
+/*____Variables____*/
+
+/* Colors */
+$dark-grey: #333;
+$light-grey: #ccc;
+$lighest-grey: #e6e6e6;
+$white: #FFFFFF;
+$red: #df3710;
+
+/* Widths */
+$full-width: 100%;
+$max-width: 1024px;
+
+/* Breakpoints */
+$desktop: 1024px;
+$tablet: 768px;
+$mobile: 460px;
+
+/* Typography */
+$base-font-family: "proxima-nova", sans-serif;
+$heading-font-family: $base-font-family;
+
+/* Font Sizes */
+$base-font-size: 1.3em;
+$base-line-height: 2.2em;
+
+/* Font Colors */
+$base-font-color: black;
+$action-color: $dark-grey;
+
+/* Background Colors */
+$base-background-color: #fff;
+$secondary-background-color: #fff;
+
+
+/*____Mixins____*/
+
+/* Breakpoints */
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media only screen and (min-width: $desktop) { @content; }
+  }
+  @else if $point == tablet {
+    @media only screen and (min-width: $tablet) { @content; }
+  }
+  @else if $point == mobileonly {
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+}
+
+/* Prefixs */
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('', '-webkit-', '-moz-', '-ms-', '-o-') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('', '-webkit-', '-moz-', '-ms-', '-o-') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+@mixin keyframes($animation) {
+  @-webkit-keyframes #{$animation} {
+    @content;
+  }
+  @-moz-keyframes #{$animation} {
+    @content;
+  }
+  @-ms-keyframes #{$animation} {
+    @content;
+  }      
+  @-o-keyframes #{$animation} {
+    @content;
+  }    
+  @keyframes #{$animation} {
+    @content;
+  }
+}

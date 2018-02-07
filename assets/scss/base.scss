@@ -1,0 +1,247 @@
+/*____Base____*/
+
+::-moz-selection 	{ background:black; color:#fff; }
+::selection 		{ background:black; color:#fff; }
+
+body {
+    line-height: 24px;
+    font-size: x-small;
+    font-family: $base-font-family;
+    margin: 0;
+    padding: 0;
+    background: #F0F0F0;
+}
+.floatright {
+	float: right;
+}
+/* header stylings */
+h1 {
+    font-size: 4.3em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 2.0em;
+}
+
+h4 {
+    font-size:1.6em;
+}
+
+h5 {
+    font-size: 1.4em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3em;
+	margin: 20px 0 20px 0; 
+    font-family: $heading-font-family;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: $white;
+	font-weight: 300;
+}
+
+/* paragraph & Links */
+a {
+	color: $white;
+    text-decoration: none;
+}
+
+a:active {
+	color: $dark-grey;
+}
+
+p.intro,
+.intro p {
+	font-size: 1.8em;
+	line-height: 1.6em;
+}
+
+p {
+	color: $dark-grey;
+	font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin: 10px 0 22px 0;
+    font-family: "droid-serif", serif;
+}
+
+
+/* lists */
+ul li,
+ol li {
+	color: $dark-grey;
+ 	font-size: $base-font-size;
+}
+
+ul li ul,
+ol li ol, 
+ul li ul li ul, 
+ol li ol li ol {
+    font-size: $base-font-size;
+}
+
+li {
+    padding-bottom: 5px;
+}
+
+ul, ol {
+    margin:0;
+}
+
+ol li,
+ul li {
+    list-style-position: inside;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ul, ol {
+    padding: 0px;
+}
+
+
+/* Text Styles */
+.caps {
+	text-transform: uppercase;	
+}
+
+.all-caps {
+	text-transform: uppercase;
+}
+
+.code {
+	font-family: monospace;
+	background-color: $lighest-grey;
+	border: solid 1px $light-grey;
+	padding: 2px;
+}
+
+.aligncenter { text-align: center;}
+.alighright {text-align: right;}
+.alignleft {text-align: left;}
+
+/* Form Elements */
+
+label {
+	color: $dark-grey;
+	font-size: $base-font-size;
+    line-height: $base-line-height;
+}
+
+input[type="submit"] {
+	font-size: $base-font-size;
+	color: white;
+	line-height: $base-line-height;
+	background-color: $red;
+	cursor: pointer;
+	padding: 6px 16px;
+	@include vendor-prefix('transition','all 300ms');
+	border-color: transparent;
+	font-family: $base-font-family;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 0.9em;
+}
+
+input[type="submit"]:hover {
+	background-color: $dark-grey;
+}
+
+.wpcf7-form {
+	padding-top: 20px;
+	p {
+		margin-bottom: 10px;
+	}
+}
+
+input[type="text"], textarea, input[type="email"], input[type="tel"], input[type="password"] {
+	display: block;
+	color: $dark-grey;
+	font-size: 1.9em;
+	line-height: 1.2em;
+	padding: 12px;
+	margin: 0px 0 0 0;
+	width: 100%;
+	border: solid 1px #ebebeb;
+	background: #f4f4f4;
+}
+
+input[type="text"].wpcf7-not-valid, textarea.wpcf7-not-valid, input[type="email"].wpcf7-not-valid, input[type="tel"].wpcf7-not-valid {
+	border: solid 1px red;
+}
+
+label {
+	font-size: 0.6em;
+	text-transform: uppercase;
+	font-family: "adobe-garamond-pro", serif;
+	letter-spacing: 0.2em;
+	display: block;
+	width: 100%;
+	@media only screen and (min-width: $tablet) {
+		width: 90%;
+	}
+}
+
+.webform-component-checkboxes:before, .webform-component-checkboxes:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	overflow: hidden;
+}
+
+.webform-component-checkboxes:after {
+	clear: both;
+}
+
+/* Random Elements */
+
+hr {
+	border: 0;
+	height: 3px;
+	border-top: dotted 1px #ccc;
+	background:transparent;
+	margin: 20px 0;
+}
+
+blockquote:before {
+	position: absolute;
+	font-size: 1.6em;
+	display: block;
+}
+
+blockquote:before {
+	left: 0;
+	top: 0;
+	content: "â€œ";
+}
+
+blockquote {
+    font-size: 1.4em;
+    position: relative;
+    margin-left: 10px;
+    padding-left: 20px;
+    margin-bottom: 4px;
+    padding-bottom: 0;
+    font-size-adjust:0.47;
+    font-style:italic;
+    color: $dark-grey;
+    line-height: 1.4em;
+    -webkit-font-smoothing: antialiased;
+}
+
+address, 
+address p {
+    font-size: 16px;
+    font-style: normal;
+    margin-bottom: 0 !important;
+}
