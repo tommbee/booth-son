@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Cms\Entity;
+namespace AppBundle\Entity\Cms;
 
 interface MediaEntityInterface
 {

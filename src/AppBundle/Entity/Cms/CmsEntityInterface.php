@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBundle\Cms\Entity;
+namespace AppBundle\Entity\Cms;
 
-use AppBundle\Cms\User\CmsUser;
+use AppBundle\Entity\User\CmsUser;
 
 interface CmsEntityInterface
 {
@@ -16,7 +16,7 @@ interface CmsEntityInterface
      * Get the records published date
      * @return Date The records date
      */
-    public function getPublishedDate();
+    public function getUpdatedDate();
 
     /**
      * Gets the records author

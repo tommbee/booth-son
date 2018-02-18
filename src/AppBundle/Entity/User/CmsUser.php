@@ -1,7 +1,13 @@
 <?php
 
-namespace AppBundle\Cms\User;
+namespace AppBundle\Entity\User;
 
 class CmsUser {
     
+    protected $name;
+
+    public function getName()
+    {
+        return $this->name;
+    }
 }
