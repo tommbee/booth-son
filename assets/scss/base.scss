@@ -16,7 +16,7 @@ body {
 }
 /* header stylings */
 h1 {
-    font-size: 4.3em;
+    font-size: 4em;
 }
 
 h2 {
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3em;
 	margin: 20px 0 20px 0; 
     font-family: $heading-font-family;
-	text-transform: uppercase;
+	//text-transform: uppercase;
 	letter-spacing: 0.06em;
 	color: $white;
 	font-weight: 300;
