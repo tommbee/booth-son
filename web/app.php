@@ -1,18 +1,15 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Dotenv\Dotenv;
 
 require __DIR__.'/../vendor/autoload.php';
 if (PHP_VERSION_ID < 70000) {
     include_once __DIR__.'/../var/bootstrap.php.cache';
 }
 
-$dotenv = new Dotenv();
-$dotenv->load(__DIR__ . '/../.env');
-$env = getenv('ENVIRONMENT');
+$env = getenv('SYMFONY_ENV') ?: 'dev';
 
-$kernel = new AppKernel($env, false);
+$kernel = new AppKernel($env, getenv('SYMFONY_DEBUG') === 'true');
 if (PHP_VERSION_ID < 70000) {
     $kernel->loadClassCache();
 }
