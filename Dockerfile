@@ -2,6 +2,10 @@ FROM webdevops/php-nginx:7.1
 
 env WEB_DOCUMENT_ROOT=/home/docker/www
 
+# Listen on the HTTP/S port
+#EXPOSE 80
+#EXPOSE 443
+
 RUN mkdir -p /home/docker/www
 
 # Install packages
