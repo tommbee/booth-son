@@ -42,11 +42,18 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
+        "unit-tests": [
+            "composer update",
+            "/vendor/phpunit/phpunit"
+        ],
         "post-install-cmd": [
             "@symfony-scripts"
         ],
         "post-update-cmd": [
             "@symfony-scripts"
+        ],
+        "run-unit-tests": [
+            "@unit-tests"
         ]
     },
     "config": {
