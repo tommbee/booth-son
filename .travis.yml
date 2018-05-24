@@ -23,4 +23,4 @@ jobs:
           - docker login --username=_ --password=$HEROKU_API_KEY $HEROKU_DOCKER_REGISTRY
           - docker pull $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
           - docker tag $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT $HEROKU_DOCKER_REGISTRY/$DOCKER_APP/web:$TRAVIS_COMMIT
-          - docker push $HEROKU_DOCKER_IMAGE_URL/$DOCKER_APP/web:$TRAVIS_COMMIT
+          - docker push $HEROKU_DOCKER_REGISTRY/$DOCKER_APP/web:$TRAVIS_COMMIT
