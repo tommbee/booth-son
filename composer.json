@@ -45,7 +45,7 @@
         ],
         "unit-tests": [
             "composer update",
-            "vendor/bin/phpunit"
+            "php vendor/bin/phpunit"
         ],
         "post-install-cmd": [
             "@symfony-scripts"
