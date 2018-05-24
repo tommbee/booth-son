@@ -10,18 +10,17 @@ jobs:
   include:
     - stage: build
       script:
-          - echo $HEROKU_DOCKER_REGISTRY
           - docker login -u $DOCKER_USER -p $DOCKER_PASS
           - docker build -t $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT .
           - docker push $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
 
     - stage: test
       script:
-          - docker run --env-file ./.env-test $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT sh -c "cd /home/docker/www && composer run-script run-unit-tests"
+          - docker run --env-file ./.env-test -w /home/docker/www $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT sh -c "composer run-script run-unit-tests"
 
     - stage: deploy
       script:
           - docker login --username=_ --password=$HEROKU_API_KEY $HEROKU_DOCKER_REGISTRY
           - docker pull $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
-          - docker tag $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT $HEROKU_DOCKER_IMAGE_URL/$DOCKER_APP/web:$TRAVIS_COMMIT
+          - docker tag $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT $HEROKU_DOCKER_REGISTRY/$DOCKER_APP/web:$TRAVIS_COMMIT
           - docker push $HEROKU_DOCKER_IMAGE_URL/$DOCKER_APP/web:$TRAVIS_COMMIT
