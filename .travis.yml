@@ -21,7 +21,7 @@ jobs:
 
     - stage: test
       script:
-          - docker run -e MAILER_USER='example@mail.com' -e MAILER_PASSWORD='test' -e MAILER_HOST='0.0.0.0' -e MAILER_TRANSORTER='smtp' $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT sh -c "cd /home/docker/www && composer run-script run-unit-tests"
+          - docker run -e SECRET -e DATABASE_PASSWORD -e DATABASE_USER -e DATABASE_NAME -e DATABASE_HOST -e DATABASE_PORT -e DATABASE_PORT -e MAILER_USER='mail@mail.com' -e MAILER_PASSWORD='test' -e MAILER_HOST='0.0.0.0' -e MAILER_TRANSORTER='smtp' $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT sh -c "cd /home/docker/www && composer run-script run-unit-tests"
 
     - stage: deploy
       script:
