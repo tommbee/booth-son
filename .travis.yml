@@ -1,9 +1,5 @@
-variables:
-  DOCKER_APP: DOCKER_APP
-  DOCKER_USER: DOCKER_USER
-  DOCKER_PASS: DOCKER_PASS
-  HEROKU_API_KEY: HEROKU_API_KEY
-  HEROKU_DOCKER_REGISTRY: "registry.heroku.com"
+env:
+  - HEROKU_DOCKER_REGISTRY="registry.heroku.com"
 
 stages:
   - build
