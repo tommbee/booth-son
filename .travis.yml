@@ -14,7 +14,7 @@ jobs:
   include:
     - stage: build
       script:
-          - echo $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
+          - echo $HEROKU_DOCKER_REGISTRY
           - docker login -u $DOCKER_USER -p $DOCKER_PASS
           - docker build -t $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT .
           - docker push $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
