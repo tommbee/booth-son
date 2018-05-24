@@ -21,7 +21,7 @@ jobs:
 
     - stage: test
       script:
-          - docker run $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT composer run-script run-unit-tests
+          - docker run $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT sh -c "cd /home/docker/www && composer run-script run-unit-tests"
 
     - stage: deploy
       script:

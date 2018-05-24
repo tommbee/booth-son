@@ -19,6 +19,7 @@
         "doctrine/orm": "^2.5",
         "friendsofsymfony/user-bundle": "~2.0",
         "incenteev/composer-parameter-handler": "^2.0",
+        "phpunit/phpunit": "^4.8",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
         "symfony/dotenv": "3.4.*",
@@ -44,7 +45,7 @@
         ],
         "unit-tests": [
             "composer update",
-            "/vendor/phpunit/phpunit"
+            "vendor/bin/phpunit"
         ],
         "post-install-cmd": [
             "@symfony-scripts"
