@@ -1,5 +1,4 @@
 /.web-server-pid
-/app/config/parameters.yml
 /build/
 /phpunit.xml
 /var/*
@@ -17,3 +16,4 @@
 /web/bundles/
 node_modules
 .idea
+.env
