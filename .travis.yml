@@ -26,4 +26,4 @@ jobs:
     - ssh tombennett.info "dokku tags:deploy $DOCKER_APP $TRAVIS_COMMIT"
 before_install:
 - openssl aes-256-cbc -K $encrypted_811eb66fa22a_key -iv $encrypted_811eb66fa22a_iv
-  -in deploy.key.enc -out deploy.key -d
+  -in .travis/deploy.key.enc -out .travis/deploy.key -d
