@@ -21,9 +21,9 @@ jobs:
     - chmod 600 .travis/deploy.key
     - ssh-add .travis/deploy.key
     - ssh-keyscan tombennett.info >> ~/.ssh/known_hosts
-    - ssh tombennett.info "docker pull $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT"
-    - ssh tombennett.info "docker tag $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT $HEROKU_DOCKER_REGISTRY/$DOCKER_APP:$TRAVIS_COMMIT"
-    - ssh tombennett.info "dokku tags:deploy $DOCKER_APP $TRAVIS_COMMIT"
+    - ssh root@tombennett.info "docker pull $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT"
+    - ssh root@tombennett.info "docker tag $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT $HEROKU_DOCKER_REGISTRY/$DOCKER_APP:$TRAVIS_COMMIT"
+    - ssh root@tombennett.info "dokku tags:deploy $DOCKER_APP $TRAVIS_COMMIT"
 before_install:
 - openssl aes-256-cbc -K $encrypted_811eb66fa22a_key -iv $encrypted_811eb66fa22a_iv
   -in .travis/deploy.key.enc -out .travis/deploy.key -d
