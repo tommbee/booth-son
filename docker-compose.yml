@@ -9,7 +9,7 @@ services:
             - '8001:80'
         volumes:
             - .:/home/docker/www
-            #- ./docker/site.conf:/opt/docker/etc/nginx/vhost.conf
+            - ./docker/site.conf:/opt/docker/etc/nginx/vhost.conf
         env_file: .env
         networks:
             - code-network
