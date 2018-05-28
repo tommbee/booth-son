@@ -17,3 +17,5 @@
 node_modules
 .idea
 .env
+.travis/*.key
+.travis/*.key.pub

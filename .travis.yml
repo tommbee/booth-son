@@ -1,26 +1,29 @@
 env:
-  - HEROKU_DOCKER_REGISTRY="registry.heroku.com"
-
+- HEROKU_DOCKER_REGISTRY="dokku"
 stages:
-  - build
-  - test
-  - deploy
-
+- build
+- test
+- deploy
 jobs:
   include:
-    - stage: build
-      script:
-          - docker login -u $DOCKER_USER -p $DOCKER_PASS
-          - docker build -t $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT .
-          - docker push $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
-
-    - stage: test
-      script:
-          - docker run --env-file ./.env-test -w /home/docker/www $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT sh -c "composer run-script run-unit-tests"
-
-    - stage: deploy
-      script:
-          - docker login --username=_ --password=$HEROKU_API_KEY $HEROKU_DOCKER_REGISTRY
-          - docker pull $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
-          - docker tag $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT $HEROKU_DOCKER_REGISTRY/$DOCKER_APP/web:$TRAVIS_COMMIT
-          - docker push $HEROKU_DOCKER_REGISTRY/$DOCKER_APP/web:$TRAVIS_COMMIT
+  - stage: build
+    script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - docker build -t $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT .
+    - docker push $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
+  - stage: test
+    script:
+    - docker run --env-file ./docker/.env-test -w /home/docker/www $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT
+      sh -c "composer run-script run-unit-tests"
+  - stage: deploy
+    script:
+    - eval "$(ssh-agent -s)"
+    - chmod 600 .travis/deploy.key
+    - ssh-add .travis/deploy.key
+    - ssh-keyscan tombennett.info >> ~/.ssh/known_hosts
+    - ssh tombennett.info "docker pull $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT"
+    - ssh tombennett.info "docker tag $DOCKER_USER/$DOCKER_APP:$TRAVIS_COMMIT $HEROKU_DOCKER_REGISTRY/$DOCKER_APP:$TRAVIS_COMMIT"
+    - ssh tombennett.info "dokku tags:deploy $DOCKER_APP $TRAVIS_COMMIT"
+before_install:
+- openssl aes-256-cbc -K $encrypted_811eb66fa22a_key -iv $encrypted_811eb66fa22a_iv
+  -in deploy.key.enc -out deploy.key -d
