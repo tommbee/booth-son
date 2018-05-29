@@ -6,10 +6,10 @@ services:
            dockerfile: Dockerfile
         container_name: booth-web
         ports:
-            - '8001:80'
+            - '8001:8002'
         volumes:
             - .:/home/docker/www
-            - ./docker/site.conf:/opt/docker/etc/nginx/vhost.conf
+            #- ./docker/site.conf:/opt/docker/etc/nginx/vhost.conf
         env_file: .env
         networks:
             - code-network
