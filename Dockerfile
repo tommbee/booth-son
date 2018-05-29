@@ -11,6 +11,8 @@ RUN apt-get update && \
 
 COPY docker/site.conf /etc/nginx/nginx.conf
 
+COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 RUN composer self-update
 
 COPY . /home/docker/www
@@ -22,11 +24,9 @@ RUN chown -R www-data:www-data .
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
-EXPOSE 8002
+EXPOSE 8001
 
-CMD service nginx start
-
-#CMD php-fpm
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 
 
 #FROM webdevops/php-nginx:7.1

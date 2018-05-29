@@ -6,7 +6,7 @@ services:
            dockerfile: Dockerfile
         container_name: booth-web
         ports:
-            - '8001:8002'
+            - '8001:8001'
         volumes:
             - .:/home/docker/www
             #- ./docker/site.conf:/opt/docker/etc/nginx/vhost.conf
