@@ -20,8 +20,11 @@ RUN composer self-update
 COPY . /home/docker/www
 
 RUN cd /home/docker/www \
-    && composer install --working-dir=/home/docker/www --no-interaction --no-progress
+    && composer install --working-dir=/home/docker/www --no-autoloader --no-scripts --no-interaction --no-progress
 
 RUN chown -R www-data:www-data .
+
+RUN cd /home/docker/www \
+    && composer dump-autoload
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
