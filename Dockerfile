@@ -8,7 +8,7 @@ EXPOSE 8001
 RUN apt-get update && \
     apt-get install --no-install-recommends -y libicu-dev git zlib1g-dev zip nginx supervisor && \
     apt-get clean && \
-    docker-php-ext-install zip pdo opcache intl && \
+    docker-php-ext-install zip pdo pdo_mysql opcache intl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY docker/site.conf /etc/nginx/nginx.conf
