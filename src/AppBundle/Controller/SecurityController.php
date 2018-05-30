@@ -2,9 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
-use Symfony\Component\HttpFoundation\Request;
 
 class SecurityController extends BaseController
 {    
@@ -13,6 +11,6 @@ class SecurityController extends BaseController
      */
     protected function renderLogin(array $data)
     {
-        return $this->render('@AppBundle/Resources/views/Security/login.html.twig', $data);
+        return $this->render('Security/login.html.twig', $data);
     }
 }

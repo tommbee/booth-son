@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <section class="row">
+        <div class="columns small-offset-4 small-14">
+
+            {% trans_default_domain 'FOSUserBundle' %}
+
+            <div class="fos_user_user_show">
+                <p>Username: {{ user.username }}</p>
+                <p>Email Address: {{ user.email }}</p>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

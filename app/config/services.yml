@@ -29,7 +29,15 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    AppBundle\Controller\ProfileController:
+          arguments:
+            $eventDispatcher: '@event_dispatcher'
+            $formFactory: '@fos_user.profile.form.factory'
+            $userManager: '@fos_user.user_manager'
+
     # add more services, or override services that need manual wiring
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+

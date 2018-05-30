@@ -16,7 +16,7 @@ body {
 }
 /* header stylings */
 h1 {
-    font-size: 4em;
+    font-size: 2em;
 }
 
 h2 {
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 	//text-transform: uppercase;
 	letter-spacing: 0.06em;
 	color: $white;
-	font-weight: 300;
+	font-weight: 500;
 }
 
 /* paragraph & Links */
@@ -66,11 +66,11 @@ p.intro,
 }
 
 p {
-	color: $dark-grey;
+	color: white;
 	font-size: $base-font-size;
     line-height: $base-line-height;
     margin: 10px 0 22px 0;
-    font-family: "droid-serif", serif;
+    font-family: $base-font-family;
 }
 
 
@@ -133,7 +133,7 @@ ul, ol {
 /* Form Elements */
 
 label {
-	color: $dark-grey;
+	color: white;
 	font-size: $base-font-size;
     line-height: $base-line-height;
 }
@@ -181,15 +181,10 @@ input[type="text"].wpcf7-not-valid, textarea.wpcf7-not-valid, input[type="email"
 }
 
 label {
-	font-size: 0.6em;
 	text-transform: uppercase;
 	font-family: "adobe-garamond-pro", serif;
 	letter-spacing: 0.2em;
 	display: block;
-	width: 100%;
-	@media only screen and (min-width: $tablet) {
-		width: 90%;
-	}
 }
 
 .webform-component-checkboxes:before, .webform-component-checkboxes:after {

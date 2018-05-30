@@ -6,10 +6,13 @@ WORKDIR /home/docker/www
 EXPOSE 8001
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y libicu-dev git zlib1g-dev zip nginx supervisor && \
+    apt-get install --no-install-recommends -y libicu-dev git wget gnupg zlib1g-dev zip nginx supervisor && \
     apt-get clean && \
     docker-php-ext-install zip pdo pdo_mysql opcache intl && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+	&& apt-get install -y nodejs
 
 COPY docker/site.conf /etc/nginx/nginx.conf
 

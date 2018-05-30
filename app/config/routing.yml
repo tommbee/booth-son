@@ -1,8 +1,58 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-# fos_user_security_login:
-#     path:     /login
-#     defaults: { _controller: AppBundle:Security:login }
+
+fos_user_security_login:
+     path:     /login
+     defaults: { _controller: AppBundle:Security:login }
+     methods:  [GET, POST]
+
+fos_user_security_check:
+     path:     /login_check
+     defaults: { _controller: AppBundle:Security:check }
+     methods:  [POST]
+
+fos_user_security_logout:
+     path:     /logout
+     defaults: { _controller: AppBundle:Security:logout }
+     methods:  [GET, POST]
+
+fos_user_profile_show:
+     path:     /profile
+     defaults: { _controller: AppBundle:Profile:show}
+     methods:  [GET]
+
+fos_user_registration_register:
+    path: /register
+    methods: [GET, POST]
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /
+        permanent: false
+
+fos_user_registration_check_email:
+    path: /register/check-email
+    methods: [GET]
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /
+        permanent: false
+
+fos_user_registration_confirm:
+    path: /register/confirm/{token}
+    methods: [GET]
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /
+        permanent: false
+
+fos_user_registration_confirmed:
+    path: /register/confirmed
+    methods: [GET]
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /
+        permanent: false
