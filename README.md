@@ -1,6 +1,8 @@
 Symfony Standard Edition
 ========================
 
+[![Build Status](https://travis-ci.org/tommbee/booth-son.svg)](https://travis-ci.org/tommbee/booth-son)
+
 ```
 docker-compose up -d
 ```
