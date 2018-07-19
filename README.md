@@ -8,11 +8,15 @@ docker-compose up -d
 ```
 
 ```
-docker exec -w /home/docker/www -it booth-web composer install
+docker exec -it booth-web composer install
 ```
 
 ```
-docker exec -w /home/docker/www -it booth-web php bin/console doctrine:schema:update --force
+docker exec -it booth-web php bin/console doctrine:schema:update --force
+```
+
+```
+docker exec -it booth-web php bin/console fos:user:create admin test@example.com admin --super-admin
 ```
 
 What's inside?
