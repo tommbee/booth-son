@@ -50,6 +50,9 @@
                         <a href="{{ path("projects") }}" class="three">Projects</a>
                         <a href="{{ path("contact") }}" class="four">Contact</a>
                     </div>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a class="logout-button btn" href="{{ path('fos_user_security_logout') }}">logout</a>
+                    {% endif %}
                 </div>
             </div>
             <div class="row">
