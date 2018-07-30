@@ -19,3 +19,4 @@ node_modules
 .env
 .travis/*.key
 .travis/*.key.pub
+creds.txt
