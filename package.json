@@ -6,6 +6,7 @@
     "webpack-notifier": "^1.5.1"
   },
   "dependencies": {
+    "font-face-observer": "^1.0.0",
     "jquery": "^3.3.1"
   }
 }

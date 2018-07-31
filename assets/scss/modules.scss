@@ -115,6 +115,7 @@ nav {
       text-indent: -9999px;
       overflow: hidden;
       position: absolute;
+      transition: transform 0.25s linear;
       &:first-child {
         top: 0;
       }
@@ -124,6 +125,20 @@ nav {
       &:last-child {
         bottom: 0;
       }
+    }
+  }
+  &.open a span {
+    &:first-child {
+      display: none;
+    }
+    &:nth-child(2) {
+      top: 10px;
+      transform: rotate(45deg);
+    }
+    &:last-child {
+      bottom: auto;
+      top: 10px;
+      transform: rotate(-45deg);
     }
   }
 }
@@ -241,7 +256,9 @@ hr.hr {
 }
 
 #work {
-  margin-top: 40px;
+  @media only screen and (min-width: $tablet) {
+    margin-top: 40px;
+  }
   .columns {
     img {
       width: 100%;
