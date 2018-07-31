@@ -59,10 +59,10 @@ export class Main {
                 redirectPage();
             }, 100);
         });
-
+        const that = this;
         this.$burger.on('click', function(e) {
             $(this).parent('.burger').toggleClass('open');
-            this.$mmenu.toggleClass('open');
+            that.$mmenu.toggleClass('open');
         });
     }
 }
