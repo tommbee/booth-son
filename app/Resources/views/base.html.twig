@@ -42,6 +42,9 @@
                 z-index: 1000;
                 opacity: 1;
             }
+            hr.hr {
+                transform: scaleX(0);
+            }
         </style>
 
     </head>
@@ -54,12 +57,6 @@
                     <span>open/close menu</span>
                     <span></span>
                 </a>
-            </div>
-            <div class="mobile_menu">
-                <a href="{{ path("homepage") }}" class="one"><span>Home</span></a>
-                <a href="{{ path("about") }}" class="two"><span>About</span></a>
-                <a href="{{ path("projects") }}" class="three"><span>Projects</span></a>
-                <a href="{{ path("contact") }}" class="four"><span>Contact</span></a>
             </div>
             <div class="nav_holder">
                 <div class="row">
@@ -82,8 +79,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="columns small-offset-9 small-6">
+                <div class="columns small-offset-1 small-22 medium-offset-9 medium-6">
                     <hr class="hr" />
+                    <div class="mobile_menu">
+                        <a href="{{ path("homepage") }}" class="one"><span>Home</span></a>
+                        <a href="{{ path("about") }}" class="two"><span>About</span></a>
+                        <a href="{{ path("projects") }}" class="three"><span>Projects</span></a>
+                        <a href="{{ path("contact") }}" class="four"><span>Contact</span></a>
+                    </div>
                 </div>
             </div>
             <div id="main" class="aligncenter">

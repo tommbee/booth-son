@@ -67,13 +67,14 @@ nav {
   max-height: 0;
   transition: max-height 0.15s ease-out;
   overflow: hidden;
+  margin-bottom: 14px;
   a {
     display: block;
     width: 100%;
     padding: 10px;
     text-align: center;
-    background: white;
-    color: #000;
+    background: #333;
+    color: #FFF;
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
@@ -86,13 +87,14 @@ nav {
   }
   @media only screen and (min-width: $tablet) {
     display: none;
+    margin-bottom: 0;
   }
 }
 
 .burger {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 27px;
+  right: 18px;
   width: 30px;
   height: 25px;
   display: block;
@@ -188,9 +190,13 @@ hr.hr {
   height: 1px;
   background: #ccc;
   opacity: 0.4;
-  transition: .25s ease-out;
+  transition: transform .25s ease-out;
   transform: scaleX(0);
-  transition-delay: .5s;
+  transition-delay: .75s;
+  margin-bottom: 0;
+  @media only screen and (min-width: $tablet) {
+    margin-bottom: 14px;
+  }
 }
 
 .loaded hr.hr {
