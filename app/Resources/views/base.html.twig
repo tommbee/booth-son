@@ -103,6 +103,9 @@
         {% block body %}
 
         {% endblock %}
+        <footer>
+            <p>&copy; B. Booth &amp; Son <script>document.write(new Date().getFullYear())</script></p>
+        </footer>
     </body>
     <script>
         (function (d) {
@@ -115,20 +118,6 @@
         })(document);
     </script>
     <script>
-        //var styleSheets = [
-        //    "{{ asset('build/css/main.css') }}",
-        //];
-        // for (var i = 0, length = styleSheets.length; i < length; i++) {
-        //     var link = document.createElement("link");
-        //     link.href = styleSheets[i];
-        //     link.type = "text/css";
-        //     link.rel = "stylesheet";
-        //     link.media = "screen,print";
-        //     document.getElementsByTagName("head")[0].appendChild(link);
-        //     setTimeout(function () {
-        //         window.loadEverything();
-        //     }, 1000);
-        // }
         window.stylesheets = "{{ asset('build/css/main.css') }}";
     </script>
     <script type="text/javascript" src="{{ asset('build/js/site.min.js') }}"></script>

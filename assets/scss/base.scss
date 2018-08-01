@@ -127,7 +127,7 @@ ul, ol {
 }
 
 .aligncenter { text-align: center;}
-.alighright {text-align: right;}
+.alignright {text-align: right;}
 .alignleft {text-align: left;}
 
 /* Form Elements */
@@ -208,30 +208,21 @@ hr {
 	margin: 20px 0;
 }
 
-blockquote:before {
-	position: absolute;
-	font-size: 1.6em;
-	display: block;
-}
-
-blockquote:before {
-	left: 0;
-	top: 0;
-	content: "â€œ";
-}
-
 blockquote {
-    font-size: 1.4em;
+	border-left: solid 3px #ccc;
+    font-size: 2em;
     position: relative;
     margin-left: 10px;
     padding-left: 20px;
-    margin-bottom: 4px;
+    margin-bottom: 15px;
+    margin-top: 10px;
     padding-bottom: 0;
     font-size-adjust:0.47;
     font-style:italic;
-    color: $dark-grey;
+    color: white;
     line-height: 1.4em;
     -webkit-font-smoothing: antialiased;
+	font-family: "henriette", serif;
 }
 
 address, 

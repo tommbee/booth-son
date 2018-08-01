@@ -1,10 +1,27 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}About{% endblock %}
+
 {% block body %}
 <section id="about">
     <div class="row">
-        <div class="columns medium-22 medium-offset-1 aligncenter">
-            <p>about!</p>
+        <div class="columns medium-22 medium-offset-1">
+            <div class="columns medium-20">
+                <h1 class="art_direct">We're a family run, multi disciplined team, creating bespoke buildings &amp; spaces.</h1>
+                <hr class="hr-two"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns medium-15 medium-offset-2">
+            <p>Aenean metus sapien, pharetra consequat tempus molestie, laoreet vitae diam. Nam libero est, dictum non quam sit amet, aliquet posuere quam. Cras eget eros ultricies, feugiat ante sit amet, vestibulum est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam ac mauris tempus, pellentesque sapien et, blandit purus. Phasellus porta arcu non elit lobortis aliquam. Quisque non lobortis nunc, eu elementum metus. Integer urna tellus, fermentum sed rutrum vitae, euismod et magna. Morbi vel mollis metus.</p>
+            <blockquote>
+                Aenean metus sapien, pharetra consequat tempus molestie, laoreet vitae diam. Nam libero est, dictum n
+            </blockquote>
+            <p>Sed porttitor sapien sed tortor dapibus maximus. Fusce id viverra orci, sit amet vehicula nisl. in iaculis risus. Nullam vel nunc sit amet tortor laoreet molestie. In gravida bibendum nisl id eleifend. Cras eget quam nec risus mattis egestas. Ut tristique, odio ac feugiat he</p>
+        </div>
+        <div class="columns medium-6 alignleft">
+            <img class="about_img" src="{{ asset('images/builders.jpg') }}" />
         </div>
     </div>
 </section>
