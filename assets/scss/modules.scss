@@ -100,7 +100,10 @@ footer {
   text-transform: uppercase;
   &.large {
     font-size: 14px;
-    padding: 12px 30px;
+    padding: 12px 10px;
+    @media only screen and (min-width: $tablet) {
+      padding: 12px 30px;
+    }
   }
   &:hover {
     background: white;
@@ -378,4 +381,8 @@ hr.hr-two {
 
 .about_img {
   margin-top: 16px;
+  display: none;
+  @media only screen and (min-width: $tablet) {
+    display: block;
+  }
 }
