@@ -1,4 +1,5 @@
 import { Preloader } from './preloader'
+import 'slick-carousel'
 const $ = require('jquery');
 const tilt = require('tilt.js');
 
@@ -17,6 +18,30 @@ export class Main {
         this.initListener();
         this.initPreloader();
         this.initTilts();
+        this.initSliders();
+        const isTouch = this.isTouchDevice();
+        if (isTouch) {
+            $("html").addClass("touch");
+        }
+    }
+
+    initSliders() {
+        $(".slider").slick();
+    }
+
+
+    isTouchDevice() {
+        var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+        var mq = function(query) {
+            return window.matchMedia(query).matches;
+        }
+
+        if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+            return true;
+        }
+
+        var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+        return mq(query);
     }
 
     initTilts() {

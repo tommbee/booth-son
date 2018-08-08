@@ -41,7 +41,7 @@
             .is-exiting .loading.hide.back {
                 z-index: 1000;
                 opacity: 1;
-                transition-delay: 500ms;
+                transition-delay: 600ms;
             }
             hr.hr {
                 transform: scaleX(0);
@@ -59,9 +59,14 @@
             .delay-two {
                 transition-delay: 1200ms;
             }
-
             .delay-three {
                 transition-delay: 1400ms;
+            }
+            .delay-four {
+                transition-delay: 1600ms;
+            }
+            .delay-five {
+                transition-delay: 1800ms;
             }
             .slide-opacity {
                 opacity: 0;
@@ -93,8 +98,15 @@
             .loaded.is-exiting .slide-left.delay {
                 transition-delay: 0s !important;
             }
+            .loaded.is-exiting .slide-right.delay {
+                transition-delay: 0s !important;
+            }
             .loaded.is-exiting .slide-right {
                 transform: translate(1rem, 0) !important;
+                opacity: 0;
+                transition-delay: 0s !important;
+            }
+            .loaded.is-exiting .slide-opacity {
                 opacity: 0;
                 transition-delay: 0s !important;
             }

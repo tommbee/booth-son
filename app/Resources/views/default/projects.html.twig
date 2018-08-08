@@ -1,11 +1,48 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Projects{% endblock %}
+
 {% block body %}
-<section id="about">
-    <div class="row">
-        <div class="columns medium-22 medium-offset-1 aligncenter">
-            <p>projects!</p>
+    <section id="work">
+        <div class="row">
+            <div class="columns medium-8">
+                <a href="/projects/1/barn-house-conversion" class="js-tilt slide-left transition delay-three">
+                    {#<span class="play">View detail</span>#}
+                    <span class="desc">
+                    <span class="title">Barn House conversion <br/>with out-buildings</span>
+                </span>
+                    <img src="{{ asset('images/ss.jpg') }}" />
+                </a>
+            </div>
+            <div class="columns medium-8">
+                <a href="/projects/2/farm-house-new-build" class="js-tilt slide-left transition delay">
+                    {#<span class="play">View detail</span>#}
+                    <span class="desc">
+                    <span class="title">Farm house new build</span>
+                </span>
+                    <img src="{{ asset('images/ss3.jpg') }}" />
+                </a>
+            </div>
+            <div class="columns medium-8">
+                <a href="/projects/3/garage-workspace" class="js-tilt slide-left transition">
+                    {#<span class="play">View detail</span>#}
+                    <span class="desc">
+                    <span class="title">Garage workspace</span>
+                </span>
+                    <img src="{{ asset('images/ss4.jpg') }}" />
+                </a>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="columns medium-8 end">
+                <a href="/projects/4/groundfloor-extension" class="js-tilt slide-left transition delay-four">
+                    {#<span class="play">View detail</span>#}
+                    <span class="desc">
+                    <span class="title">Ground floor extension</span>
+                </span>
+                    <img src="{{ asset('images/ss5.jpg') }}" />
+                </a>
+            </div>
+        </div>
 </section>
 {% endblock %}

@@ -49,10 +49,29 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
 }
 
+h1.nomargintop,
+h2.nomargintop,
+h3.nomargintop,
+h4.nomargintop,
+h5.nomargintop,
+h6.nomargintop {
+	margin-top: 20px;
+	@media only screen and (min-width: $tablet) {
+		margin-top: 0;
+	}
+}
+
 /* paragraph & Links */
 a {
 	color: $white;
     text-decoration: none;
+}
+
+.small-margin-top {
+	margin-top: 0;
+	@media only screen and (min-width: $tablet) {
+		margin-top: 20px;
+	}
 }
 
 a:active {
@@ -63,6 +82,13 @@ p.intro,
 .intro p {
 	font-size: 1.8em;
 	line-height: 1.6em;
+}
+
+p.intro {
+	font-family: "henriette", serif;
+	font-size: 2em;
+	font-style: italic;
+	-webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -178,13 +204,6 @@ input[type="text"], textarea, input[type="email"], input[type="tel"], input[type
 
 input[type="text"].wpcf7-not-valid, textarea.wpcf7-not-valid, input[type="email"].wpcf7-not-valid, input[type="tel"].wpcf7-not-valid {
 	border: solid 1px red;
-}
-
-label {
-	text-transform: uppercase;
-	font-family: "adobe-garamond-pro", serif;
-	letter-spacing: 0.2em;
-	display: block;
 }
 
 .webform-component-checkboxes:before, .webform-component-checkboxes:after {

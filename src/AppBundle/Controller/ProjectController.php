@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ProjectController extends Controller
 {
@@ -23,12 +24,16 @@ class ProjectController extends Controller
     }
 
     /**
-     * @Route("/projects/{id}", requirements={"id" = "\d+"}, name="projectview")
+     * @Route("/projects/{id}/{title}", requirements={"id" = "\d+"}, name="projectview")
      * @param int $id
+     * @param string $title
+     * @return Response
      */
-    public function showAction($id)
+    public function showAction($id, $title)
     {
-        echo 'show!';
+        return $this->render("default/project-{$id}.html.twig", [
+            'base_dir' => realpath($this->getParameter('kernel.project_dir')) . DIRECTORY_SEPARATOR,
+        ]);
     }
 
     /**

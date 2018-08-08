@@ -1,10 +1,26 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Contact{% endblock %}
+
 {% block body %}
-<section id="about">
+<section id="contact">
     <div class="row">
         <div class="columns medium-22 medium-offset-1 aligncenter">
-            <p>contact!</p>
+            <form>
+                <div class="row">
+                    <div class="columns medium-offset-6 medium-12">
+                        <label for="name">Name</label>
+                        <input placeholder="Mr A. Example" type="text" name="name" id="name" />
+                        <label for="tel">Telephone No</label>
+                        <input placeholder="+44 0000 00000" type="tel" name="tel" id="tel" />
+                        <label for="email">Email Address</label>
+                        <input placeholder="example@mail.com" type="email" name="email" id="email" />
+                        <label for="enquire">Enquiry</label>
+                        <textarea id="enquire" placeholder="Enquiry here ..."></textarea>
+                        <button class="cta large" type="submit">Send Enquiry</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </section>
