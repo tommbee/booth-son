@@ -1,11 +1,11 @@
 {
   "build/css/main.css": "/build/css/main.css",
   "build/css/main.js": "/build/css/main.js",
-  "build/images/bg.jpg": "/build/images/bg.a5071471.jpg",
-  "build/js/site.min.js": "/build/js/site.min.js",
   "build/fonts/slick.eot": "/build/fonts/slick.ced611da.eot",
   "build/fonts/slick.ttf": "/build/fonts/slick.d41f55a7.ttf",
   "build/fonts/slick.woff": "/build/fonts/slick.b7c9e1e4.woff",
   "build/images/ajax-loader.gif": "/build/images/ajax-loader.c5cd7f53.gif",
-  "build/images/slick.svg": "/build/images/slick.f97e3bbf.svg"
+  "build/images/bg.jpg": "/build/images/bg.a5071471.jpg",
+  "build/images/slick.svg": "/build/images/slick.f97e3bbf.svg",
+  "build/js/site.min.js": "/build/js/site.min.js"
 }

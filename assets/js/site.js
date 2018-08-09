@@ -96,10 +96,10 @@ export class Main {
             }
 
             $("body").addClass('is-exiting');
-
+            
             setTimeout(function() {
                 redirectPage();
-            }, 100);
+            }, 500);
         });
         const that = this;
         this.$burger.on('click', function(e) {
